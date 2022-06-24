@@ -1,3 +1,13 @@
+:root {
+  --color-house: #212529;
+  --color-roof: #343a40;
+  --color-window: #adb5bd;
+  --color-wall: #495057;
+  --color-door: #6c757d;
+  --color-doorknob: #adb5bd;
+  --color-light: #fff;
+}
+
 *,
 *::before,
 *::after {
@@ -8,13 +18,79 @@
 
 html {
   box-sizing: border-box;
+  font-size: 62.5%;
 }
 
 .house {
   position: relative;
-  background-color: aqua;
-  height: 100vh;
+  background-color: var(--color-house);
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.roof {
+  width: 40%;
+  height: 35vh;
+  background-color: var(--color-roof);
+  /* border: 2px solid #fff; */
+  border-bottom: 2px solid var(--color-light);
+  clip-path: polygon(50% 0, 50% 0, 0 100%, 100% 100%);
+  position: relative;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+.window {
+  width: 7rem;
+  height: 7rem;
+  background-color: var(--color-window);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+}
+
+.wall {
+  width: 35%;
+  height: 55vh;
+  background-color: var(--color-wall);
+  border: 2px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.door {
+  width: 40%;
+  height: 70%;
+  background-color: var(--color-door);
+  border: 2px solid #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 1.5rem;
+}
+
+.door__knob--1 {
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--color-doorknob);
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.door__knob--2 {
+  width: 1rem;
+  height: 2rem;
+  background-color: var(--color-doorknob);
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: translate(0.5rem, -.2rem);
 }
